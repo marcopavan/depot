@@ -6,4 +6,6 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)$}i,
 		message: 'must be a URL for GIF, JPG or PNG image.'
 	}
+	validates :title, :length => { :minimum => 10 }
+	#validates :title, lenght: {minimum: 10}			Maybe this is the new syntax.
 end

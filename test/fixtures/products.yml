@@ -17,3 +17,9 @@ ruby:
   description: Il mio primo libro di ruby on rails
   image_url: rails.png
   price: 49.50 
+
+short:
+  title: Only5
+  description: Il mio primo libro di ruby on rails
+  image_url: rails.png
+  price: 49.50 
