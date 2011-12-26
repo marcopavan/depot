@@ -42,6 +42,8 @@ class LineItemsController < ApplicationController
   def create
     #@line_item = LineItem.new(params[:line_item])
 
+    session[:counter]=0
+
     @cart = current_cart
     product = Product.find(params[:product_id])
     @line_item = @cart.line_items.build(product: product)

@@ -4,6 +4,8 @@
 
 <h1>Your Pragmatic Catalog</h1>
 
+<div id="counter">You have visualized the store <span class="<% if @counter>=5 %>red<% end %>"><%= @counter %></span> times.</div>
+
 <% @products.each do |product| %>
 
 	<div class="entry">

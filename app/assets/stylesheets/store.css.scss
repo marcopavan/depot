@@ -11,6 +11,21 @@
 		border-bottom: 3px dotted #77d;
 	}
 
+	#counter {
+		margin-top: 10px;
+		margin-bottom: 40px;
+		width: 100%;
+		text-align: right;
+
+		.red {
+			color: red;
+		}
+
+		span {
+			font-weight: bold;
+		}
+	}
+
 	/* An entry in the store catalog */
 
 	.entry {
