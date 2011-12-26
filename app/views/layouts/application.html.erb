@@ -21,6 +21,8 @@
 			<li><a href="#">News</a></li>
 			<li><a href="#">Contact</a></li>
 		</ul>
+		<% time=Time.zone.now %>
+		<p id="date"><%= time.to_s(:long) %></p>
 	</div>
 	<div id="main">
 		<%= yield %>

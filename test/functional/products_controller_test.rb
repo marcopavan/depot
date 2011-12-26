@@ -15,6 +15,8 @@ class ProductsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:products)
+    assert_select '.list_line_odd .list_image', minimum: 1    # Task C Playtime
+    assert_select '.list_line_even .list_image'               # Task C Playtime
   end
 
   test "should get new" do
