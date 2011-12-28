@@ -72,5 +72,9 @@ Depot::Application.routes.draw do
     #end
     put 'decrement', on: :member
   end
+
+  resources :products do
+    get :who_bought, on: :member
+  end
   
 end
