@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: Dave Thomas
-  address: MyText
-  email: dave@example.org
+  name: Vito Pavan
+  address: via C. Colombo 76
+  email: vitopavan@gmail.com
   pay_type: Check
 
 two:

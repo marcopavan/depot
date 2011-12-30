@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
+  title: Test product
+  description: Prova del campo price su line_items
+  image_url: rails.png
+  price: 9.40
 
 two:
   title: MyString
