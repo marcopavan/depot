@@ -18,17 +18,30 @@ Depot::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :users
+  scope '(:locale)' do
+    resources :users
+    resources :orders
+    resources :line_items do
+      put 'decrement', on: :member
+    end
+    resources :carts
+    resources :products do
+      get :who_bought, on: :member
+    end
+    root to: 'store#index', as: 'store'
+  end
 
-  resources :orders
+  # resources :users
 
-  resources :line_items
+  # resources :orders
 
-  resources :carts
+  # resources :line_items
 
-  get "store/index"
+  # resources :carts
 
-  resources :products
+  # get "store/index"
+
+  # resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -79,7 +92,7 @@ Depot::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'store#index', as: 'store'
+  # root :to => 'store#index', as: 'store'
 
   # See how all your routes lay out with "rake routes"
 
@@ -87,15 +100,15 @@ Depot::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-  resources :line_items do
+  # resources :line_items do
     #member do
     #  put 'decrement'
     #end
-    put 'decrement', on: :member
-  end
+    # put 'decrement', on: :member
+  # end
 
-  resources :products do
-    get :who_bought, on: :member
-  end
+  # resources :products do
+  #   get :who_bought, on: :member
+  # end
   
 end
