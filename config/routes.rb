@@ -1,4 +1,23 @@
 Depot::Application.routes.draw do
+  
+  # valori creati automaticamente
+  # get "admin/index"
+
+  # get "sessions/new"
+
+  # get "sessions/create"
+
+  # get "sessions/destroy"
+  # fine valori creati automaticamente
+
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   resources :users
 
   resources :orders
