@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     rescue
       logger.error "Attempt to access invalid product #{params[:id]}"
+      OrderNotifier.invalid_access().deliver
       redirect_to products_url, notice: 'Invalid product'
     else
       respond_to do |format|

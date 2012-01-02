@@ -28,7 +28,14 @@
 			<li><a href="#">Contact</a></li>
 		</ul>
 		<% time=Time.zone.now %>
-		<p id="date"><%= time.to_s(:long) %></p>
+		<p id="date">
+		<span>Today is:</span><br/>
+			<%= time.to_s(:long) %><br/>
+		</p>
+		<p id="shipping_date">
+		<span>If you buy today we ship on:</span><br/>
+			<%= (time + 3.days).strftime("%m/%d/%Y") %>
+		</p>
 	</div>
 	<div id="main">
 		<%= yield %>

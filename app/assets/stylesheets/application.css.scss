@@ -75,8 +75,12 @@
 			}
 		}
 
-		#date {
+		#date, #shipping_date {
 			color: #fff;
+
+			span {
+				color: #888;
+			}
 		}
 	}
 }

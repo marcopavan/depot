@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class UserStoriesTest < ActionDispatch::IntegrationTest
-  fixtures :products
+class ShipDateTest < ActionDispatch::IntegrationTest
+  fixtures :all
 
   # test "the truth" do
   #   assert true
   # end
 
-  test "buying a product" do
-
+  test 'get a ship notification email' do
+  	
   	# database reset
 
   	LineItem.delete_all
@@ -62,9 +62,9 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   	line_item = order.line_items[0]
   	assert_equal ruby_book, line_item.product
 
-  	mail = ActionMailer::Base.deliveries[1]
+  	mail = ActionMailer::Base.deliveries.last
   	assert_equal ["dave@example.com"], mail.to
-  	assert_equal "Pragmatic Store Order Confirmation", mail.subject
+  	assert_equal "Pragmatic Store Order Shipping Estimation", mail.subject
 
   end
 
