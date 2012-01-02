@@ -1,19 +1,19 @@
 <% # unless cart.line_items.empty? %>
-<div class="cart_title">Your cart</div>
+<div class="cart_title"><%= t('.title') %></div>
 <table>
 	
 	<%= render(cart.line_items) %>
 
 	<tr class="total_line">
 		<td colspan="2">Total</td>
-		<td class="total_cell"><%= number_to_currency(cart.total_price, :unit => "&euro;", :precision => 2) %></td>
+		<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
 		<td></td>
 	</tr>
 </table>
 
 <% unless request.url.include? new_order_path %>
-<%= button_to 'Checkout', new_order_path, method: :get %>
+<%= button_to t('.checkout'), new_order_path, method: :get %>
 <% end %>
-<%= button_to 'Empty cart', cart, method: :delete, confirm: 'Are you sure?', remote: true %>
+<%= button_to t('.empty'), cart, method: :delete, confirm: 'Are you sure?', remote: true %>
 
 <% # end %>

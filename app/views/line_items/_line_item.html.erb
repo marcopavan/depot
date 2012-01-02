@@ -1,7 +1,7 @@
 <tr id="<% if line_item == @current_item %>current_item<% end %>">
 	<td><%= line_item.quantity %>&times;</td>
 	<td><%= line_item.product.title %></td>
-	<td class="item_price"><%= number_to_currency(line_item.price, :unit => "&euro;", :precision => 2) %></td>
+	<td class="item_price"><%= number_to_currency(line_item.price) %></td>
 	<td><%= button_to '+', line_items_path(product_id: line_item.product), remote: true %></td>
 	<td><%= button_to '-', decrement_line_item_path(line_item), method: :put, remote: true %></td>
 	<td><%= button_to 'X', line_item, method: :delete, confirm: 'Are you sure?', remote: true %></td>

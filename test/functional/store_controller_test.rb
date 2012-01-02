@@ -7,7 +7,7 @@ class StoreControllerTest < ActionController::TestCase
     assert_select '#columns #side a', minimun: 4
     assert_select '#main .entry', 4
     assert_select 'h3', 'Programming Ruby 1.9'
-    assert_select '.price', /\&euro;[,\d]+\.\d\d/
+    assert_select '.price', /[,\d]+\.\d\d/
   end
 
   test "markup needed for store.js.coffee is in place" do
